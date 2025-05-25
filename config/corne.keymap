@@ -4,14 +4,14 @@
  * SPDX-License-Identifier: MIT
  */
 
+#define HOST_OS 1
+
+#include "zmk-helpers/helper.h"
+#include "zmk-helpers/unicode-chars/russian.dtsi"
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
-
-#define HOST_OS 1
-#include "zmk-helpers/helper.h"
-#include "zmk-helpers/unicode-chars/russian.dtsi"
 
 / {
     combos {
@@ -39,7 +39,7 @@
             label = "KH_HS_TAPDANCE";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp LEFT_BRACKET>, <&kp RIGHT_BRACKET>;
+            bindings = <&mo 2>, <&to 3>;
         };
 
         hrm: hrm {
@@ -64,10 +64,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&to 0         &kp B  &kp L  &kp D       &kp C  &kp V        &kp J    &kp Y  &kp O          &kp U          &kp COMMA   &kp DELETE
-&kp TAB       &kp N  &kp R  &kp T       &kp S  &kp G        &kp P    &kp H  &kp A          &kp E          &kp I       &kp SLASH
-&kp LEFT_ALT  &kp X  &kp Q  &kp M       &kp W  &kp Z        &kp K    &kp F  &kp SQT        &kp SEMICOLON  &kp PERIOD  &kp LEFT_CONTROL
-                            &kp LSHIFT  &mo 1  &kp SPACE    &kp RET  &mo 2  &kp BACKSPACE
+&to 0         &kp B  &kp L  &kp D       &kp C  &kp V        &kp J    &kp Y            &kp O          &kp U          &kp COMMA   &kp DELETE
+&kp TAB       &kp N  &kp R  &kp T       &kp S  &kp G        &kp P    &kp H            &kp A          &kp E          &kp I       &kp SLASH
+&kp LEFT_ALT  &kp X  &kp Q  &kp M       &kp W  &kp Z        &kp K    &kp F            &kp SQT        &kp SEMICOLON  &kp PERIOD  &kp LEFT_CONTROL
+                            &kp LSHIFT  &mo 1  &kp SPACE    &kp RET  &kh_hs_tapdance  &kp BACKSPACE
             >;
         };
 
@@ -103,10 +103,10 @@
 
         layer_3 {
             bindings = <
-&trans  &ru_y   &ru_ts  &ru_u   &ru_k   &ru_ye    &ru_n   &ru_g   &ru_sh  &ru_shch  &ru_z  &ru_kh
-&trans  &ru_f   &ru_bi  &ru_v   &ru_a   &ru_p     &ru_r   &ru_o   &ru_l   &ru_d   &ru_zh  &ru_e
-&trans  &ru_ya  &ru_ch  &ru_s   &ru_m   &ru_i     &ru_t   &ru_soft  &ru_b  &ru_yu  &ru_yo  &ru_hard
-                        &trans  &trans  &trans    &trans  &trans  &trans
+&trans  &ru_y   &ru_ts  &ru_u   &ru_k   &ru_ye    &ru_n   &ru_g     &ru_sh  &ru_shch  &ru_z   &ru_kh
+&trans  &ru_f   &ru_bi  &ru_v   &ru_a   &ru_p     &ru_r   &ru_o     &ru_l   &ru_d     &ru_zh  &ru_e
+&trans  &ru_ya  &ru_ch  &ru_s   &ru_m   &ru_i     &ru_t   &ru_soft  &ru_b   &ru_yu    &ru_yo  &ru_hard
+                        &trans  &trans  &trans    &trans  &trans    &trans
             >;
         };
     };
